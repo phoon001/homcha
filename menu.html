@@ -4,48 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOMCHA</title>   
-    <link rel="stylesheet" href="css/style2.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+    <link rel="stylesheet" href="css/style-menu.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="/css/style2v2.css">
-
     <script src="js/script.js"></script>
 </head>
 <body>
     <!-- navbar -->
-    <div class="torpong">
-       <a class="logo" href="index.html">
-        <img src="img/logo.png" alt="" width="100px" height="100px">
-       </a>
-
-        <ul>
-            <li><a href="index.html">หน้าแรก</a></li>
-            <li><a href="menu.html" class="active">เมนู</a></li>
-            <li><a href="contact.html">ติดต่อ</a></li>
-            <div class="nav-profile">
-
-                <div onclick="openCart()" style="cursor: pointer;" class="nav-profile-cart">
-                  <i class="fas fa-cart-shopping"></i>
-                  <div id="cartcount" class="cartcount" style="display: none;">
-                    0
-                  </div>
-                </div>
-        </ul>
-    </div>
-
+    <nav>
+      <div class="nav-container">
+        <a href="index.html">
+          <img src="img/logo.png" class="logonav">
+        </a>
   
-    
+        <div class="nav-profile">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html" class="active">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <div onclick="openCart()" style="cursor: pointer;" class="nav-profile-cart">
+            <i class="fas fa-cart-shopping"></i>
+            <div id="cartcount" class="cartcount" style="display: none;">
+              0
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+      <div class="content">
+        <div class="info">
+          <h1>MENU</h1>
+        </div>
+      </div>
       <div class="container">
         <div class="sidebar">
-          <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sidebar-search" placeholder="Search something...">
+          <input onkeyup="searchsomething(this)" id="txt_search" type="text" class="sidebar-search" placeholder="ค้นหา...">
     
           <a onclick="searchproduct('all')" class="sidebar-items">
-            All product
+            เครื่องดื่มทั้งหมด
           </a>
-          <a onclick="searchproduct('coco' , 'greentea') " class="sidebar-items">
+          <a onclick="searchproduct('tea') " class="sidebar-items">
             ชานม
+          </a>
+          <a onclick="searchproduct('coffee') " class="sidebar-items">
+            กาแฟ
+          </a>
+          <a onclick="searchproduct('soda') " class="sidebar-items">
+            โซดา
           </a>
 
         </div>
@@ -57,7 +64,7 @@
       <div id="modalDesc" class="modal" style="display: none;">
         <div onclick="closeModal()" class="modal-bg"></div>
         <div class="modal-page">
-          <h2>Detail</h2>
+          <h2>รายละเอียด</h2>
           <br>
           <div class="modaldesc-content">
             <img id="mdd-img" class="modaldesc-img" src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80" alt="">
@@ -69,10 +76,10 @@
               <br>
               <div class="btn-control">
                 <button onclick="closeModal()" class="btn">
-                  Close
+                  ยกเลิก
                 </button>
                 <button onclick="addtocart()" class="btn btn-buy">
-                  Add to cart
+                  ซื้อ
                 </button>
               </div>
             </div>
@@ -83,17 +90,17 @@
       <div id="modalCart" class="modal" style="display: none;">
         <div onclick="closeModal()" class="modal-bg"></div>
         <div class="modal-page">
-          <h2>My cart</h2>
+          <h2>รายการสินค้า</h2>
           <br>
           <div id="mycart" class="cartlist">
     
           </div>
           <div class="btn-control">
             <button onclick="closeModal()" class="btn">
-              Cancel
+              ยกเลิก
             </button>
             <button class="btn btn-buy">
-              Buy
+              สั่งซื้อ
             </button>
           </div>
         </div>
